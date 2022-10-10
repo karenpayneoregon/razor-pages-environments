@@ -1,5 +1,7 @@
 # Using Bootstrap 5 tool-tips
 
+![x](assets/tooltips.png)
+
 If you read the [docs](https://getbootstrap.com/docs/5.2/components/tooltips/) there are still countless questions on the web indicating they can not get tool-tips to work.
 
 1. Install popper.js

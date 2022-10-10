@@ -112,15 +112,15 @@
             &copy; @DateTime.Now.Year
             <environment include="Staging,Development">
                 <span class="fw-bold text-danger">Environment is @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")</span>
-                <button class="btn mt-3 btn-sm btn-outline-success bi bi-twitter float-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Follow us">
+                <a href="https://twitter.com/ORemployment" target="_blank" class="btn mt-3 btn-sm btn-outline-success bi bi-twitter float-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Follow us">
                     &nbsp;Connect
-                </button>
+                </a>
             </environment>
             
             <environment include="Production">
-                <button class="btn mt-3 btn-sm btn-outline-success bi bi-twitter float-end">
+                <a href="https://twitter.com/ORemployment" target="_blank" class="btn mt-3 btn-sm btn-outline-success bi bi-twitter float-end">
                     &nbsp;Connect
-                </button>
+                </a>
             </environment>
 
         </div>

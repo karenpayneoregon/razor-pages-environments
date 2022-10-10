@@ -27,27 +27,11 @@
                     background-repeat: repeat;
                 }
 
-                .tooltip-inner {
-                    background-color: green !important; /* Set box color to green */
-                    color: white !important; /* Set text color to white */
-                }
-
-                .tooltip.bs-tooltip-top .tooltip-arrow::before {
-                    border-top-color: green; /* Set arrow color to green */
-                }
-
-                .tooltip.bs-tooltip-bottom .tooltip-arrow::before {
-                    border-bottom-color: green; /* Set arrow color to green */
-                }
-
-                .tooltip.bs-tooltip-start .tooltip-arrow::before {
-                    border-left-color: green; /* Set arrow color to green */
-                }
-
-                .tooltip.bs-tooltip-end .tooltip-arrow::before {
-                    border-right-color: green; /* Set arrow color to green */
-                }
-
+                .tooltip-inner {background-color: green !important; color: white !important;}
+                .tooltip.bs-tooltip-top .tooltip-arrow::before {border-top-color: green;}
+                .tooltip.bs-tooltip-bottom .tooltip-arrow::before {border-bottom-color: green;}
+                .tooltip.bs-tooltip-start .tooltip-arrow::before {border-left-color: green;}
+                .tooltip.bs-tooltip-end .tooltip-arrow::before {border-right-color: green;}
             </style>
 
         </environment>
@@ -56,10 +40,17 @@
         <environment names="Staging">
 
             <style>
+
                 body {
                     background-image: url(/lib/images/stage_background.png);
                     background-repeat: repeat;
                 }
+
+                .tooltip-inner {background-color: grey !important;color: white !important;}
+                .tooltip.bs-tooltip-top .tooltip-arrow::before {border-top-color: grey;}
+                .tooltip.bs-tooltip-bottom .tooltip-arrow::before {border-bottom-color: grey;}
+                .tooltip.bs-tooltip-start .tooltip-arrow::before {border-left-color: grey;}
+                .tooltip.bs-tooltip-end .tooltip-arrow::before {border-right-color: grey;}
             </style>
 
         </environment>

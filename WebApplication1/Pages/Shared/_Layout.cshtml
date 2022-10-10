@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Background images for environments</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
 </head>
@@ -20,10 +21,33 @@
         <environment names="Development">
 
             <style>
+
                 body {
                     background-image: url(/lib/images/dev_background.png);
                     background-repeat: repeat;
                 }
+
+                .tooltip-inner {
+                    background-color: green !important; /* Set box color to green */
+                    color: white !important; /* Set text color to white */
+                }
+
+                .tooltip.bs-tooltip-top .tooltip-arrow::before {
+                    border-top-color: green; /* Set arrow color to green */
+                }
+
+                .tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+                    border-bottom-color: green; /* Set arrow color to green */
+                }
+
+                .tooltip.bs-tooltip-start .tooltip-arrow::before {
+                    border-left-color: green; /* Set arrow color to green */
+                }
+
+                .tooltip.bs-tooltip-end .tooltip-arrow::before {
+                    border-right-color: green; /* Set arrow color to green */
+                }
+
             </style>
 
         </environment>
@@ -68,13 +92,29 @@
             <environment include="Staging,Development">
                 <span class="fw-bold text-danger">Environment is @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")</span>
             </environment>
+
+            <button class="btn mt-3 btn-sm btn-outline-success bi bi-twitter float-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Follow us">
+                &nbsp;Connect
+            </button>
         </div>
 
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/popper.js/umd/popper.js"></script>
+
+    
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+
 
     @await RenderSectionAsync("Scripts", required: false)
 

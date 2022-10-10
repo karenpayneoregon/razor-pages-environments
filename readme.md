@@ -74,3 +74,9 @@ In the case a background image does not work for your design then use the footer
 # Summary
 
 Code presented can assist in knowing which enviroment you are running a Razor Pages app in and can help figuring out issues between different environments that does not carry over to production. And as a bonus an introduction to [environment](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-6.0).
+
+## See also
+
+- Razor Pages [The Environment Tag Helper](https://www.learnrazorpages.com/razor-pages/tag-helpers/environment-tag-helper)
+- Razor Pages [CSS Isolation](https://github.com/karenpayneoregon/razor-pages-style-isolation)
+- [Bootstrap tooltips](bootstrapToolTips.md)

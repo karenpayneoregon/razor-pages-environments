@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Background images for environments</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+        <div style="background-color: #0d5170">
+            <img src="/lib/images/header_logo_ogov_2019.png" />
+            <span class="text-white">Employment Department</span>
+        </div>
+
+        @* examples to indicate we are in dev environment *@
+        <environment names="Development">
+
+            <style>
+                body {
+                    background-image: url(/lib/images/dev_background.png);
+                    background-repeat: repeat;
+                }
+            </style>
+
+        </environment>
+        
+        @* examples to indicate we are in staging environment *@
+        <environment names="Staging">
+
+            <style>
+                body {
+                    background-image: url(/lib/images/stage_background.png);
+                    background-repeat: repeat;
+                }
+            </style>
+
+        </environment>
+        
+        
+        <nav aria-label="breadcrumb" class="ms-3">
+            <ol class="breadcrumb m-lg-1">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Unemployment</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Online Claim System</li>
+            </ol>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+
+            @RenderBody()
+
+        </main>
+    </div>
+    <footer class="border-top footer">
+        <div id="footMain" class="container" style="font-size: x-small;">
+            &copy; @DateTime.Now.Year
+            <environment include="Staging,Development">
+                <span class="fw-bold text-danger">Environment is @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")</span>
+            </environment>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

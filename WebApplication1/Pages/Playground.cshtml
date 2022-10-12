@@ -1,0 +1,26 @@
+﻿@page
+@using WebApplication1.Classes
+@model WebApplication1.Pages.PlaygroundModel
+@{
+}
+<div class="container mt-2">
+    <h4 class="text-center shadow bg-success text-white pt-2 pb-2">Mixing HTML with C#</h4>
+
+    <p class="mt-lg-4">Some states</p>
+    <ul class="list-group mt-2 border border-primary shadow">
+        @foreach (var location in Locations.GetLocations())
+        {
+            
+            @if (@location == "Oregon")
+            {
+                <li class="list-group-item active" aria-current="true">@location</li>
+            }
+            else
+            {
+                <li class="list-group-item list-group-item-warning">@location</li>
+            }
+        }
+    </ul>
+
+</div>
+

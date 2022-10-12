@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/animate.css/animate.min.css"/>
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -112,7 +113,7 @@
             &copy; @DateTime.Now.Year
             <environment include="Staging,Development">
                 <span class="fw-bold text-danger">Environment is @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")</span>
-                <a href="https://twitter.com/ORemployment" target="_blank" class="btn mt-3 btn-sm btn-outline-success bi bi-twitter float-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Follow us">
+                <a href="https://twitter.com/ORemployment" target="_blank" class="btn mt-3 btn-sm btn-outline-success bi bi-twitter float-end animate__animated animate__bounce" data-bs-toggle="tooltip" data-bs-placement="top" title="Follow us">
                     &nbsp;Connect
                 </a>
             </environment>
@@ -136,6 +137,7 @@
     
     @* optional, setup environment sections to load full version in staging and dev, min version in production *@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootbox.js/bootbox.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <environment include="Staging,Development">

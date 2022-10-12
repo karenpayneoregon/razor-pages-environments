@@ -1,5 +1,5 @@
 ﻿@page "{lang:=en}"
-@inject IWebHostEnvironment hostingEnv
+@inject IWebHostEnvironment HostingEnv
 @model IndexModel
 @{
     ViewData["Title"] = "Home";
@@ -12,7 +12,7 @@
 
         <div style="background-color: #0f506f" class="text-white text-center p-2">
             Welcome to Your Online Claim System
-            <a href="#" class="float-end btn btn btn-sm customLangButton btn-success">Español</a>
+            <a id="SP" href="#" class="float-end btn btn btn-sm customLangButton btn-success">Español</a>
         </div>
 
     </div>
@@ -83,14 +83,32 @@
         </p>
 
         <p>
-            <strong>@hostingEnv.EnvironmentName</strong> is @hostingEnv.EnvironmentName
+            <strong>@HostingEnv.EnvironmentName</strong> is @HostingEnv.EnvironmentName
         </p>
     </div>
 </environment>
 
 
+@section Scripts
+{
+    <script>
 
+        $('#SP').click(function (event) {
 
+            var timeout = 3000;
+            var dialog = bootbox.dialog(
+                {
+                    message: '<p class="text-center mb-0 bi bi-exclamation-circle font-weight-bold fs-3"> This is not implemented</p>',
+                    centerVertical: true,
+                    closeButton: false
+                });
 
+            setTimeout(function () { dialog.modal('hide'); }, timeout);
+            dialog.modal('hide');
+
+        });
+
+    </script>
+} 
 
 

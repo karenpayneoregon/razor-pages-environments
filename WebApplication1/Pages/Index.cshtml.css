@@ -25,3 +25,8 @@
     }
 }
 
+@media (max-width: 500px) {
+    #EnvDetails {
+        color:blue;
+    }
+}

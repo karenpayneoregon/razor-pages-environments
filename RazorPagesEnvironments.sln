@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI", "DI", "{4BA87A8A-1ADB-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionSimple", "DependencyInjectionSimple\DependencyInjectionSimple.csproj", "{1992D9DE-D715-4E0B-8FCF-DA712FC31C27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoConsoleApp", "DemoConsoleApp\DemoConsoleApp.csproj", "{35652C95-CBE7-4AAE-B0DD-FC7679227D60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temp projects", "Temp projects", "{F01E8FD1-DDE3-47D5-A40C-1875FFA46FB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +33,17 @@ Global
 		{1992D9DE-D715-4E0B-8FCF-DA712FC31C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1992D9DE-D715-4E0B-8FCF-DA712FC31C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1992D9DE-D715-4E0B-8FCF-DA712FC31C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35652C95-CBE7-4AAE-B0DD-FC7679227D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35652C95-CBE7-4AAE-B0DD-FC7679227D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35652C95-CBE7-4AAE-B0DD-FC7679227D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35652C95-CBE7-4AAE-B0DD-FC7679227D60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1992D9DE-D715-4E0B-8FCF-DA712FC31C27} = {4BA87A8A-1ADB-4BB3-9F88-620AFD1DE27E}
+		{35652C95-CBE7-4AAE-B0DD-FC7679227D60} = {F01E8FD1-DDE3-47D5-A40C-1875FFA46FB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36E6BEB3-DD13-49C6-88EC-AC1241DF6F9E}

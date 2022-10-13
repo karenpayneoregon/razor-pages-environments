@@ -1,6 +1,8 @@
 ﻿@page "{lang:=en}"
 @inject IWebHostEnvironment HostingEnv
 @model IndexModel
+
+
 @{
     ViewData["Title"] = "Home";
 }
@@ -33,7 +35,7 @@
 
     </div>
 
-    <div class="row justify-content-md-start border border-dark  border-0">
+    <div class="row justify-content-md-start border border-dark border-0">
 
         <div class="col-md-3 border border-dark  d-flex justify-content-center align-items-center">
             <button class="btn btn-block btn-primary-green" type="button">
@@ -54,8 +56,9 @@
     <div class="row justify-content-md-start border border-dark border-0">
 
         <div class="col-md-3 border border-dark d-flex justify-content-center">
-            <button class="btn btn-block btn-sm btn-primary" type="button">
-                Pandemic Unemployment <br>Assistance (PUA)
+
+            <button class="btn btn-block  btn-primary p-1" type="button">
+                Pandemic Unemployment&nbsp;<br>Assistance (PUA)
             </button>
 
         </div>
@@ -77,7 +80,7 @@
 *@
 
 <environment include="Staging,Development">
-    <div id="EnvDetails" class="container border border-primary border-1 mt-4 bg-success bg-opacity-25">
+    <div id="EnvDetails" class="container border border-primary border-1 mt-4 bg-success bg-opacity-25 shadow">
         <p>
             <strong>Environment is</strong> @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")
         </p>
@@ -86,8 +89,15 @@
             <strong>@HostingEnv.EnvironmentName</strong> is @HostingEnv.EnvironmentName
         </p>
     </div>
+    
+
 </environment>
 
+
+
+@{
+    await Html.RenderPartialAsync("IndexPartial");
+}
 
 @section Scripts
 {

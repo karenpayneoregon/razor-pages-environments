@@ -17,8 +17,10 @@ namespace WebApplication1
              * This is required when CSS Isolation is used other than Development environment
              */
             builder.WebHost.UseStaticWebAssets();
+
             builder.Services.AddDbContext<OedContext>(options =>
                 options.UseSqlServer(ConfigurationHelper.ConnectionString()));
+
             var app = builder.Build();
 
 

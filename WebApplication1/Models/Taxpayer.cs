@@ -16,10 +16,12 @@ namespace WebApplication1.Models
 
         [Display(Name = "Last")]
         public string LastName { get; set; }
+
+
         [Display(Name = "SSN")]
         public string Ssn { get; set; }
 
-        public string SocialMasked() => $"*****{Ssn.Substring(5,4)}";
+        public string SocialMasked() => Ssn.MaskSsn();
         public string Pin { get; set; }
 
         [Display(Name = "Started")]

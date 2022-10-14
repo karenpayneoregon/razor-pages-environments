@@ -21,7 +21,8 @@ namespace WebApplication1.Pages
             if (_context.Taxpayer != null)
             {
                 Taxpayer = await _context.Taxpayer
-                .Include(t => t.Category).ToListAsync();
+                .Include(t => t.Category)
+                .ToListAsync();
             }
         }
     }

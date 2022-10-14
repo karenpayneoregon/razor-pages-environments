@@ -1,5 +1,4 @@
-﻿using DependencyInjectionSimple.Models;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 
 namespace DependencyInjectionSimple.Classes;
 

@@ -21,7 +21,6 @@
             }
         }
     </ul>
-    
 
 
 </div>
@@ -31,6 +30,7 @@
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Information
     </button>
+
 
     <a asp-page="Index" class="btn btn-success">Home</a>
 
@@ -53,9 +53,11 @@
                 </div>
 
                 <div class="modal-body">
+
                     <environment include="Staging,Development">
                         <strong>Environment is</strong> @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")
                     </environment>
+
                 </div>
 
                 <div class="modal-footer">

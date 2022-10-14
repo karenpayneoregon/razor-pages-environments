@@ -1,3 +1,4 @@
-﻿@{
-    Layout = Environment.UserName == "PayneKp" ? "_Layout1" : "_Layout";
+﻿@using WebApplication1.Classes
+@{
+    Layout = DateTime.Now.IsNotWeekend() ? "_Layout" : "_Layout1";
 }

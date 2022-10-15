@@ -89,8 +89,8 @@
 
         <nav aria-label="breadcrumb" class="ms-3">
             <ol class="breadcrumb m-lg-1">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Unemployment</a></li>
+                <li class="breadcrumb-item"><a href="#" class="link-warning">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="link-danger">Unemployment</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Online Claim System</li>
             </ol>
         </nav>
@@ -100,7 +100,6 @@
     <div class="container">
 
         <main role="main" class="pb-3">
-
             @RenderBody()
 
         </main>
@@ -149,9 +148,15 @@
         </script>
     </environment>
 
-@if (IsSectionDefined("Karen")) {
-    @await RenderSectionAsync("Karen")
-}
+
+    @if (IsSectionDefined("Karen"))
+    {
+        @await RenderSectionAsync("Karen", required: false)
+    }
+    else
+    {
+        <em>Nothing to see here</em>
+    }
 
     @await RenderSectionAsync("Scripts", required: false)
 

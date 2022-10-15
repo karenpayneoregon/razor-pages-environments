@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/lib/animate.css/animate.min.css"/>
+    <link rel="stylesheet" href="~/lib/animate.css/animate.min.css" />
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -31,12 +31,12 @@
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    
+
     @* popper must be loaded before bootstrap*@
     <environment include="Staging,Development">
         <script src="~/lib/popper.js/umd/popper.js"></script>
     </environment>
-    
+
     @* optional, setup environment sections to load full version in staging and dev, min version in production *@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/bootbox.js/bootbox.js"></script>
@@ -50,6 +50,15 @@
             })
         </script>
     </environment>
+
+    @if (IsSectionDefined("Karen"))
+    {
+        @await RenderSectionAsync("Karen", required: false)
+    }
+    else
+    {
+        <em>Nothing to see here</em>
+    }
 
     @await RenderSectionAsync("Scripts", required: false)
 

@@ -1,0 +1,48 @@
+﻿@page
+@using WebApplicationSections.Models
+@model PrivacyModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<div class="container">
+
+    <div class="row mt-lg-5">
+        <div class="col-8">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-success text-white"><i class="bi bi-front me-2"></i>About Partial views</div>
+                        <div class="card-body bg-light">
+                            <p class="card-text">TODO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="row border-start">
+                <div id="SideBar" class="col-12">
+
+                    @{
+                        await Html.RenderPartialAsync(
+                        "IndexPartial",
+                        new PageContainer()
+                        {
+                            FirstName = "Karen",
+                            LastName = "Payne",
+                            DateOnly = new DateOnly(1956, 9, 24),
+                            Page = CurrentPage.About
+                        });
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

@@ -1,0 +1,30 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+@media (max-width: 992px) {
+    #SideBar1 {
+        color: orangered;
+    }
+}
+
+@media (max-width: 500px) {
+    #SideBar1 {
+        color: blue;
+    }
+}

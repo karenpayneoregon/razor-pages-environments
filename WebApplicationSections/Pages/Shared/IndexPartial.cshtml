@@ -1,0 +1,71 @@
+﻿@using WebApplicationSections.Models
+@using WebApplicationSections.Classes
+
+<style>
+    .child {
+        height: 80%;
+        width: 100%;
+        background: beige;
+        overflow: auto;
+        font-size: 12px;
+    }
+</style>
+
+@{
+}
+
+@{
+    var person = (PageContainer)ViewData.Model;
+    var mocked = MockedPageContent.PageContents();
+
+    @switch (person.Page)
+    {
+        case CurrentPage.Index:
+            {
+                var data = mocked.FirstOrDefault(x => x.PageName == "Index");
+
+                if (data is not null)
+                {
+                    <h3 class="text-success">@data.Title</h3>
+
+                    <div id="SideBar1" class="child border border-primary">
+
+                        @foreach (var line in data.Lines)
+                        {
+                            <p>@line</p>
+                        }
+
+
+                    </div>
+
+                }
+                break;
+            }
+        case CurrentPage.About:
+            {
+                var data = mocked.FirstOrDefault(x => x.PageName == "About");
+
+                if (data is not null)
+                {
+                    <h3 class="text-success">@data.Title</h3>
+
+                    <div class="text-muted child">
+
+                        @foreach (var line in data.Lines)
+                        {
+                            <p>@line</p>
+                        }
+
+                    </div>
+
+                }
+                break;
+            }
+        default:
+            // TODO
+            throw new ArgumentOutOfRangeException();
+    }
+
+}
+
+

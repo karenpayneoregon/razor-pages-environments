@@ -3,5 +3,6 @@
 public enum CurrentPage
 {
     Index,
-    About
+    About,
+    Contacts
 }

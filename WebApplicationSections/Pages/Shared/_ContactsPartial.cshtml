@@ -3,9 +3,9 @@
 @{
     List<Contacts> list = Model;
     
-    @foreach (var contact in list.Take(10).OrderBy(x => x.LastName))
+    @foreach (var contact in list.Take(5).OrderBy(x => x.LastName))
     {
-        <div class="row border border-dark border-opacity-10 bg-info bg-opacity-10">
+        <div class="row">
 
             <div class="col-2">@contact.ContactId</div>
 

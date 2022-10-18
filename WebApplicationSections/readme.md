@@ -64,10 +64,28 @@ if (personName is {})
 
 TODO
 
+# Database
+
+The `Contacts` Page requires a database. Before running this project, create the `NorthWind` database by running the script in the <kbd>Scripts</kbd> folder using Microsoft SQL-Server Management Studio (SSMS) or run the script and if so make sure to check the path in the script file first to ensure it matches the path where you databases are located.
+
+## Database connections
+
+The connection string resides in `appsettings.json` and is read using the following NuGet package [![](assets/Link_16x.png)](https://www.nuget.org/packages/ConfigurationLibrary/)
+
 # Bootstap
 
+For those who have never explored possibilities with this library, take the time to learn from read their docs [![](assets/Link_16x.png)](https://getbootstrap.com/docs/5.0/getting-started/introduction/) and what has been done in this project including inspecting break-points in `site.css`
 
-TODO
+Minimal use of [Bootstrap icons](https://icons.getbootstrap.com/) has been used and was added via libman [![](assets/Link_16x.png)](https://learn.microsoft.com/en-us/aspnet/core/client-side/libman/libman-vs?view=aspnetcore-6.0).
+
+# See also
+
+- [Partial views in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/partial?view=aspnetcore-6.0) Microsoft
+- [Partial Pages](https://www.learnrazorpages.com/razor-pages/partial-pages) Learn Razor Pages
+- ASP.NET Core 6 [Razor Pages Fundamentals](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-razor-pages-fundamentals/table-of-contents) Pluralsight
+
+
+
 
 # Summary
 

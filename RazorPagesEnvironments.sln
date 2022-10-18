@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI", "DI", "{4BA87A8A-1ADB-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionSimple", "DependencyInjectionSimple\DependencyInjectionSimple.csproj", "{1992D9DE-D715-4E0B-8FCF-DA712FC31C27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationSections", "WebApplicationSections\WebApplicationSections.csproj", "{C011FC2F-6271-4C0F-8E7D-B330B530C3D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationSections", "WebApplicationSections\WebApplicationSections.csproj", "{C011FC2F-6271-4C0F-8E7D-B330B530C3D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

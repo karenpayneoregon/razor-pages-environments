@@ -19,13 +19,13 @@ body {
 
 @media (max-width: 992px) {
     #SideBar1 {
-        color: orangered;
+        color:slateblue;
     }
 }
 
 @media (max-width: 500px) {
     #SideBar1 {
-        color: blue;
+        color:green;
     }
 }
 

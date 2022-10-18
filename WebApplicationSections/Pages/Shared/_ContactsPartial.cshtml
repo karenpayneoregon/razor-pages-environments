@@ -1,16 +1,16 @@
 ﻿@using WebApplicationSections.Models
 
 @{
-    List<Contacts> list = Model;
+    List<Contacts> contactsList = Model;
     
-    var variable = ViewData["Name"];
-    @foreach (var contact in list.Take(5).OrderBy(x => x.LastName))
+    var personName = ViewData["Name"];
+    @foreach (var contact in contactsList.Take(5).OrderBy(x => x.LastName))
     {
         <div class="row">
 
             <div class="col-2">@contact.ContactId</div>
 
-            @if (@contact.ContactTypeNavigation.ContactTitle == "Owner")
+            @if (contact.ContactTypeNavigation.ContactTitle == "Owner")
             {
                 <div class="col-3 text-danger fw-bold">@contact.ContactTypeNavigation.ContactTitle</div>
             }
@@ -26,13 +26,11 @@
 
     }
 
-    if (variable is not null)
+    if (personName is {})
     {
         <div class="row">
-            <div class="col-8"></div><div class="col-3 text-dark fw-bold">@variable</div>
+            <div class="col-8"></div><div class="col-3 text-dark fw-bold">@personName</div>
         </div>   
     }
-
-
 
 }

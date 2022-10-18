@@ -16,9 +16,12 @@
                     <div class="card">
                         <div class="card-header bg-success text-white"><i class="bi bi-front me-2"></i>Contacts Partial views</div>
                         <div class="card-body bg-success bg-opacity-10">
+
                             @{
-                                await Html.RenderPartialAsync("_ContactsPartial", Model.Contacts);
+                                var data = new ViewDataDictionary(ViewData) { { "Name", "Karen Payne sample" } };
+                                await Html.RenderPartialAsync("_ContactsPartial", Model.Contacts, data);
                             }
+
                         </div>
                     </div>
                 </div>
@@ -31,22 +34,21 @@
 
                     @{
                         await Html.RenderPartialAsync(
-                            "_IndexPartial",
-                            new PageContainer()
-                            {
-                                FirstName = "Karen",
-                                LastName = "Payne",
-                                DateOnly = new DateOnly(1956, 9, 24),
-                                Page = CurrentPage.Contacts
-                            });
+                        "_IndexPartial",
+                        new PageContainer()
+                        {
+                            FirstName = "Karen",
+                            LastName = "Payne",
+                            DateOnly = new DateOnly(1956, 9, 24),
+                            Page = CurrentPage.Contacts
+                        });
                     }
 
                 </div>
             </div>
         </div>
     </div>
-
-
+    
 </div>
 
 

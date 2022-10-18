@@ -3,7 +3,6 @@
     "WebApplicationSections": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "Contacts",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -2,7 +2,8 @@
 
 @{
     List<Contacts> list = Model;
-    
+    //List<Contacts> list = ViewData.Model;
+    var variable = ViewData["Name"];
     @foreach (var contact in list.Take(5).OrderBy(x => x.LastName))
     {
         <div class="row">
@@ -23,6 +24,13 @@
 
         </div>
 
+    }
+
+    if (variable is not null)
+    {
+        <div class="row">
+            <div class="col-8"></div><div class="col-3 text-dark fw-bold">@variable</div>
+        </div>   
     }
 
 

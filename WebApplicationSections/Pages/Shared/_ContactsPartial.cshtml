@@ -2,7 +2,7 @@
 
 @{
     List<Contacts> list = Model;
-    //List<Contacts> list = ViewData.Model;
+    
     var variable = ViewData["Name"];
     @foreach (var contact in list.Take(5).OrderBy(x => x.LastName))
     {

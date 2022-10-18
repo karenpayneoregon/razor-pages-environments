@@ -1,0 +1,24 @@
+﻿@page
+
+@model WebApplicationSections.Pages.ContactsModel
+
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+
+<div class="bg-opacity-10 bg-info mb-4 border border-dark p-2">
+    This is a simple example which passes off rendering contact information to a partial view using Model.Contact which is the model for the Contacts page.
+</div>
+
+<div class="container">
+    @{
+        await Html.RenderPartialAsync("_ContactsPartial", Model.Contacts);
+    }  
+</div>
+
+
+
+
+
+

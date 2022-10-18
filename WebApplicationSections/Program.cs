@@ -1,3 +1,7 @@
+using ConfigurationLibrary.Classes;
+using Microsoft.EntityFrameworkCore;
+using WebApplicationSections.Data;
+
 namespace WebApplicationSections
 {
     public class Program
@@ -9,6 +13,8 @@ namespace WebApplicationSections
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddDbContext<NorthContext>(options =>
+                options.UseSqlServer(ConfigurationHelper.ConnectionString()));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

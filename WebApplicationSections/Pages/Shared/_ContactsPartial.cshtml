@@ -1,9 +1,15 @@
 ﻿@using WebApplicationSections.Models
+@using WebApplicationSections.LanguageExtensions
 
 @{
+    /*
+     * Note that Model is not strong types as presented,
+     * we need to cast to a list of Contacts.
+     */
     List<Contacts> contactsList = Model;
     
-    var personName = ViewData["Name"];
+    
+
     @foreach (var contact in contactsList.Take(5).OrderBy(x => x.LastName))
     {
         <div class="row">
@@ -26,11 +32,22 @@
 
     }
 
-    if (personName is {})
+    DataContainer container = (DataContainer)ViewData[nameof(DataContainer)];
+    /*
+     *  If personName is not null write the value of personName to a
+     *  row below the list of contacts
+     */
+    if (container is {})
     {
+        <div class="row  border-success border-top">
+            <div class="col-5"></div>
+            <div class="col-3 text-dark fw-bold">@container.FirstName</div>
+            <div class="col-3 text-dark fw-bold">@container.LastName</div>
+        </div>   
         <div class="row">
-            <div class="col-8"></div><div class="col-3 text-dark fw-bold">@personName</div>
+            <div class="col-5"></div>
+            <div class="col-3 text-info fw-bold">@container.SubContainer.Active.ToYesNo()</div>
+            <div class="col-3 text-info fw-bold">@string.Join(",",@container.SubContainer.Items)</div>
         </div>   
     }
-
 }

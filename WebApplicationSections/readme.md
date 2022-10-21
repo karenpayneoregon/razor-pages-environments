@@ -29,11 +29,25 @@ public class PageContainer
 }
 ```
 
-The `Contact` page passes a string as a key value pair and the model, Contacts from EF Core.
+The `Contact` page passes an instance of `DataContainer`  with a key of DataContainer using `nameof(DataContainer)` rather than a string so that if the key changes so does `nameof(DataContainer)` the model, Contacts from EF Core.
 
 ```csharp
 @{
-    var data = new ViewDataDictionary(ViewData) { { "Name", "Karen Payne sample" } };
+
+    /*
+    * Here we are passing data that is not related to Contacts
+    * to show it's possible to pass anything along in RenderPartialAsync
+    */
+    var data = new ViewDataDictionary(ViewData)
+    {
+        { nameof(DataContainer), new DataContainer()
+            {
+                FirstName = "Karen", 
+                LastName = "Payne"
+            }
+        }
+    };
+
     await Html.RenderPartialAsync("_ContactsPartial", Model.Contacts, data);
 }
 ```
@@ -41,7 +55,7 @@ The `Contact` page passes a string as a key value pair and the model, Contacts f
 In `_ContactsPartial` page the key value is retrived using `ViewData`
 
 ```csharp
-var personName = ViewData["Name"];
+DataContainer container = (DataContainer)ViewData[nameof(DataContainer)];
 ```
 
 From here, the first five contacts are presented using a foreach statement.
@@ -49,15 +63,24 @@ From here, the first five contacts are presented using a foreach statement.
 To present the key/value, `personName is {}` is the same as `personName is not null`
 
 ```csharp
-if (personName is {})
+if (container is {})
 {
+    <div class="row  border-success border-top">
+        <div class="col-5"></div>
+        <div class="col-3 text-dark fw-bold">@container.FirstName</div>
+        <div class="col-3 text-dark fw-bold">@container.LastName</div>
+    </div>   
     <div class="row">
-        <div class="col-8"></div><div class="col-3 text-dark fw-bold">@personName</div>
+        <div class="col-5"></div>
+        <div class="col-3 text-info fw-bold">@container.SubContainer.Active.ToYesNo()</div>
+        <div class="col-3 text-info fw-bold">@string.Join(",",@container.SubContainer.Items)</div>
     </div>   
 }
 ```
 
-![x](assets/Contacts.png)
+The code above writes the last two rows. So this means if you want to pass other information, in this case or other cases besides the model this is one way to do so.
+
+![x](assets/DataContainerArea.png)
 
 
 # Other options for partial views

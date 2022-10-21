@@ -18,7 +18,20 @@
                         <div class="card-body bg-success bg-opacity-10">
 
                             @{
-                                var data = new ViewDataDictionary(ViewData) { { "Name", "Karen Payne sample" } };
+                                /*
+                                * Here we are passing data that is not related to Contacts
+                                * to show it's possible to pass anything along in RenderPartialAsync
+                                */
+                                var data = new ViewDataDictionary(ViewData)
+                                {
+                                    { nameof(DataContainer), new DataContainer()
+                                        {
+                                            FirstName = "Karen", 
+                                            LastName = "Payne"
+                                        }
+                                    }
+                                };
+
                                 await Html.RenderPartialAsync("_ContactsPartial", Model.Contacts, data);
                             }
 

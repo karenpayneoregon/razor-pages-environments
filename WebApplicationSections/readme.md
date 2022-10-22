@@ -111,7 +111,9 @@ Minimal use of [Bootstrap icons](https://icons.getbootstrap.com/) has been used 
 - ASP.NET Core 6 [Razor Pages Fundamentals](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-razor-pages-fundamentals/table-of-contents) Pluralsight
 
 
+# Credits
 
+For text used in this code sample [spaceipsum](https://github.com/seanherron/spaceipsum)
 
 # Summary
 

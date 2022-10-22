@@ -31,6 +31,9 @@ public class PageContainer
 
 The `Contact` page passes an instance of `DataContainer`  with a key of DataContainer using `nameof(DataContainer)` rather than a string so that if the key changes so does `nameof(DataContainer)` the model, Contacts from EF Core.
 
+> **Note**
+> DataContainer is just one example of passing information between a page and a partial page. When passing data like this keep the data small in size for performance measures.
+
 ```csharp
 @{
 

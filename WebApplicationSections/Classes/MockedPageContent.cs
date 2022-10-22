@@ -13,11 +13,11 @@ public class MockedPageContent
         {
             new PageContent()
             {
-                Title = "One world",
+                Title = "Apollo",
                 PageName = "Index",
                 Lines = new []
                 {
-                    "The view of the earth from the moon fascinated me - a small disk, 240,000 miles away. "
+                    "When we return this rock or some of the others like it to Houston, we'd like to share a piece of this rock with so many of the countries throughout the world. We hope that this will be a symbol of what our feelings are, what the feelings of the Apollo Program are, and a symbol of mankind that we can live in peace and harmony in the future."
                 }
             },
             new PageContent()

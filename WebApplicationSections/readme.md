@@ -7,6 +7,10 @@ The term *partial view* is used when developing a Razor Pages app, where markup 
 
 Microsoft docs [![](assets/Link_16x.png)](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/partial?view=aspnetcore-6.0)
 
+# Intent
+
+The goal for this article/code sample is to provide and base for how to work with partial views and is not all encompassing so take time to read Microsoft documentation and then explore the code presented followed by experimenting on your own.
+
 # Passing data to a partial view
 
 In Index.cshtml the section on the right is populated using `Html.RenderPartialAsync` which streams the rendered output directly to the response. Because the method doesn't return a result, it must be called within a Razor code block as in the second image below.
@@ -86,10 +90,6 @@ The code above writes the last two rows. So this means if you want to pass other
 ![x](assets/DataContainerArea.png)
 
 
-# Other options for partial views
-
-TODO
-
 # Database
 
 The `Contacts` Page requires a database. Before running this project, create the `NorthWind` database by running the script in the <kbd>Scripts</kbd> folder using Microsoft SQL-Server Management Studio (SSMS) or run the script and if so make sure to check the path in the script file first to ensure it matches the path where you databases are located.
@@ -115,4 +115,4 @@ Minimal use of [Bootstrap icons](https://icons.getbootstrap.com/) has been used 
 
 # Summary
 
-TODO
+Various methods have been presented for how to work with partial views, these sample are just a start, now go out and explore.
